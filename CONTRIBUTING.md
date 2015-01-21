@@ -1,4 +1,12 @@
-# Contributing to bootstrap-sass 
+# Contributing to bootstrap-sass
+
+## Asset Changes
+
+Any changes to `bootstrap-sass` assets (scss, javascripts, fonts) should be checked against the `convert` rake task.
+For usage instructions, see the [README](/README.md).
+
+If something is broken in the converter, it's preferable to update the converter along with the asset itself.
+
 
 ## Bugs
 
@@ -8,7 +16,7 @@ repository. Good bug reports are extremely helpful - thank you!
 Guidelines for bug reports:
 
 1. **Does it belong here?** &mdash; is this a problem with bootstrap-sass, or
-   it an issue with [twitter/bootstrap](https://github.com/twitter/bootstrap)?
+   it an issue with [twbs/bootstrap](https://github.com/twbs/bootstrap)?
    We only distribute a direct port and will not modify files if they're not
    changed upstream.
 
@@ -42,14 +50,18 @@ Example:
 > causing the bug, and potential solutions (and your opinions on their
 > merits).
 
-**[File a bug report](https://github.com/thomas-mcdonald/bootstrap-sass/issues/)**
+**[File a bug report](https://github.com/twbs/bootstrap-sass/issues/)**
 
 
 ## Pull requests
 
 **We will not accept pull requests that modify the SCSS beyond fixing bugs caused by *our* code!**
 
-Most pull requests should go to [twitter/bootstrap](https://github.com/twitter/bootstrap) or [jlong/sass-twitter-bootstrap](https://github.com/jlong/sass-twitter-bootstrap)
+We use a [converter script][converter-readme] to automatically convert upstream bootstrap, written in LESS, to Sass.
+
+Issues related to styles or javascript but unrelated to the conversion process should go to [twbs/bootstrap][upstream].
+
+Pull requests that fix bugs caused by our code should not modify the SCSS directly, but should patch the converter instead.
 
 Good pull requests - patches, improvements, new features - are a fantastic
 help. They should remain focused in scope and avoid containing unrelated
@@ -69,3 +81,6 @@ Please **do not** derail or troll issues. Keep the
 discussion on topic and respect the opinions of others.
 
 *props [html5-boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/CONTRIBUTING.md)*
+
+[upstream]: https://github.com/twbs/bootstrap
+[converter-readme]: https://github.com/twbs/bootstrap-sass/blob/master/README.md#upstream-converter
